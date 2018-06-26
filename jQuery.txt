@@ -1,0 +1,136 @@
+﻿$(document).ready(function(){
+$("p").click(function(){
+$(this).hide();
+});
+});
+--------------------------------------------------jQuery笔记---------------------------------------------------------------
+2---------------------------选择器
+$("tr :even") 选取偶数位置的<tr>元素
+$("tr :odd")  选取奇数位置的<tr>元素
+
+3-------------------------鼠标事件
+click dblclick   mouseenter  mouseleave  mouseup  mousedown
+
+4--------------------英语单词复习
+speed  速度   ,toggle（taogou）  切换, purple  紫色，皇族 ， opacity 模糊，不透明度  release  发布  siblings 兄妹  prepend  预谋，预先   trigger  触发 devDependencies  开发或者测试环境下的依赖包 transform的含义是：改变，使…变形；转换
+unbind 解放    adorable  可敬的，可爱的   frames 框架 infinite 无限的 temporary 临时的   strict  精确地  crowded  adj 水泄不通的 
+
+5---------------hide()或者show()
+参数可以是slow,fast,毫秒数
+
+6----------------------------淡入淡出
+fadeIn(speed，callback) fadeOut(speed，callback) fadeToggle(speed，callback) fadeTo(speed，opacity,callback) 
+
+7--------------滑动
+slideDown(speed,callback) 向下滑出  slideUp 向上滑入   slideToggle 滑动切换 
+
+8------------css3       
+ p :nth-child(n){
+ backgroud:#fff
+ } 
+ 就是属于p标签的父元素中第n个子元素加样式
+
+ 9----------------jQuery的遍历
+ 向下遍历：有find()（还可以是孙子）和children()(只是儿子)
+ 向上遍历：有parent()和parents()和parentUntil()
+ 同级遍历：siblings(获得所有同级元素）next()获得下一个同级元素 prev()获取上一个同级元素
+ 
+ 
+ 
+ 10------------------动画  animate(栩栩如生)
+ 
+ $(selector).animate({样式},speed,callback)；还支持列队功能（就是多个animate按顺序执行）     
+ 
+ 11--------------------动画停止 
+ 
+$(selector).stop(false, false)     
+
+ 12---------------------------callback 
+ $(selector).hide(1000,function(){
+  alert("22")
+ })     等动画结束才执行callBack函数
+ 
+ 
+ 13--------------------jquery中可以链接多个方法例如$(selector).slideUp().slideDown()
+ 
+ 14 ------------------------------获取内容
+ 
+ text(),html(),val()注：html 和text的区别是html 能支持标签，val一般是用与框内取值
+ 获取属性用attr(),例如href和src的值
+ 
+ 15-----------------------属性添加
+ 
+ $(selector).attr("href","123");如果是多个属性 用{"href"："223","src":"fff"}
+ 
+ 16----------------添加元素，内容
+ 有 append(),prepend(),after(),before()注：append()在元素标签内最后加，after()是在元素标签外最后加
+ 
+ 17 ------------ 删除内容
+ 
+ remove(),empty();  注：remove是移除本身和子元素，而empty只移除子元素。
+ 
+ 18----------------------操作css
+ 有 addClass(),removeClass(), toggleClass() 注：增加的样式如果本身有样式属性则被原来的覆盖。选择器和添加的class都支持多个、 
+ 
+ 19---------------------------css()解析
+ ,css("color","red")， 如果多个属性用css({"":"","":""})
+ 返回css属性是例如 $("p").css("background-color") 返回的是首个（第一个p 标签）匹配的元素
+ 
+ 20-----------------------jQuery的尺寸
+ 有 width(),height(),innerHeight(),innerWidth(),outerWidth(),outerHeight(), 注：可以在括号里重写高度和宽度，范围由小到大（本身，包括内边距，包括内边距和边框）
+ 
+ 21--------------------------jQuery的过滤
+ first(), last(),eq(n) n为索引 ， filter(.className) 指定，not(.className)和前面相反
+ 
+ 22-----------------------jQuery的加载
+$(selector).load(URL,data,callback)
+
+23-------------------------------jQuery的get ,post方法
+$.get(URL,callback)
+$.post(URL,data,callback)
+24.-----------------------------杂项
+最喜欢的方式 ： var JQ=$.noConflict(); 后面的jQuery 就可以用JQ代替了
+
+24-----------------------------------获取滚动条位子
+要获取当前页面的滚动条纵坐标位置，用：
+document.documentElement.scrollTop;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------面试题--------------------------------------------------
+ 1.JavaScript中如何检测一个变量是一个String类型？请写出函数实现
+ 答：typeof(obj) === "string"
+typeof obj === "string"
+obj.constructor === String
+
+
+2、请谈谈你对性能优化的认识？
+答：减少http请求次数，减少DNS查询次数，缓存Ajax，
+
+3.什么是模块化？
+  答：模块化就是为了减少系统耦合度，提高高内聚，减少资源循环依赖，增强系统框架设计。、
+  
+4.请描述一下cookie，sessionStorage和localStorage的区别？  
+答;存储大小限制也不同,数据有效期不同,作用域不同.
+
+5--CSS
+sass是css预处理器
+
+6、 ng-app是什么？
+答：ng-app 指令用于告诉 AngularJS 应用当前这个元素是根元素。
+
+7.Bootstrap中最多可以分多少列？lg、md、sm、xs这几个屏幕宽度的界限是多少？
+12列
+
+.col-xs- 超小屏幕手机 (<768px)
+.col-sm- 小屏幕平板 (≥768px)
+.col-md- 中等屏幕桌面显示器 (≥992px)
+.col-lg- 大屏幕大桌面显示器 (≥1200px)
+  
+8-display:none 和visibility:hidden的区别。
+1.display:none是彻底消失，不在文档流中占位，浏览器也不会解析该元素；visibility:hidden是视觉上消失了，可以理解为透明度为0的效果，在文档流中占位，浏览器会解析该元素；
+
+  
+  
+
+
+
+   
