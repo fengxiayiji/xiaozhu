@@ -1,0 +1,85 @@
+﻿ -----------------------css3-----------------
+ 1---------------- 旋转
+ div#div2
+{
+transform:rotate(30deg);
+-ms-transform:rotate(30deg); /* IE 9 */
+-moz-transform:rotate(30deg); /* Firefox */
+-webkit-transform:rotate(30deg); /* Safari and Chrome */
+-o-transform:rotate(30deg); /* Opera */
+}
+2----------------------------圆弧
+border-radius  box-shadow border-image 
+
+3--------------------------css背景
+background-image:url(3),url(4)可以用几个背景
+background-size:30% 100%  可以改变图的尺寸
+background-origin: 有border-box, padding-box,content-box 三个位置。
+
+4--------------------------选择器
+:nth-of-type(n) 选择器匹配属于父元素的特定类型的第 N 个子元素的每个元素.
+
+
+5-------------------------------transition 动画过渡
+transition: property duration timing-function delay 
+
+transition属性是个复合属性，她包括以下几个子属性：
+
+transition-property ：规定设置过渡效果的css属性名称
+transition-duration ：规定完成过渡效果需要多少秒或毫秒
+transition-timing-function ：指定过渡函数，规定速度效果的速度曲线
+transition-delay ：指定开始出现的延迟时间
+默认值分别为：all 0 ease 0 
+
+6-------------------------------改变
+
+transform的属性包括：rotate() / skew() / scale() / translate()/matrix(六个参数) ，分别还有x、y之分，比如：rotateX() 和 rotateY() ，以此类推。依次是旋转，倾斜，放大，平移
+
+注；skew(x,y),和translate(x,y)是一个参数时，第二个参数默认为0；
+
+scale(x,y)是一个参数时，第二个参数默认和第一个参数一样。
+
+当scale的参数大于0小于1是，元素缩小，当参数为负的时候，图像发生翻转。
+
+
+7------------------------------css3文本效果
+(1)text-shadow:文本阴影
+例如：h1
+{
+text-shadow: 5px 5px 5px #FF0000;
+}
+(2)自动换行
+例如：p {word-wrap:break-word;}
+
+
+8-------------------------------animation
+-webkit-animation:myfirst 5s linear 2s infinite alternate;
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+
+
+9----------------------------------多列
+column-count: 一列多少行（和报纸一样） column-gap: 列之间的间隔 column-rule: 1px outset #ff0000 (中间的样式) 
+
+
+
+10------垂直居中
+
+vertical-align；middle
+
+
+
+
+
+
+
+
+
+
