@@ -74,6 +74,8 @@ column-count: 一列多少行（和报纸一样） column-gap: 列之间的间�
 
 vertical-align；middle
 
+<meta name="viewport" content="width = device-width">
+
 
 
 

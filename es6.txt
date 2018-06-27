@@ -1,0 +1,148 @@
+﻿module.exports 初始值为一个空对象 {}
+exports 是指向的 module.exports 的引用
+require() 返回的是 module.exports 而不是 exports
+
+may_buyDetailTable
+字符串
+this.$router.push('/home/first')
+
+// 对象
+this.$router.push({ path: '/home/first' })
+
+// 命名的路由
+this.$router.push({ name: 'home', params: { userId: wise }})
+
+
+
+原始的文件上传
+
+ $(document).on('change', ':file', function(){
+        //上传参数
+
+        var file =this.files[0];
+        //判断图片类型
+		if(file){
+            if (!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(file.name)) {
+                alert("图片类型必须是.gif,jpeg,jpg,png中的一种")
+                return false;
+            }
+		}
+        var size = file.size;   //注意，这里读到的是字节数
+        var maxSize = 5 * 1024 * 1024;
+        if (maxSize < size) {
+            alert("上传图片不能超过5M");
+            return false;
+        }
+
+        var form = new FormData();
+        form.append("img",file);
+        settings.data = form;
+        /*  var wrap = $(this).parent();
+          //上传后处理
+          $.ajax(settings).done(function (response) {
+            wrap.append('<img src="' + fileHttp + response + '" data-url="' + response + '" alt="" class="pecen_yzlist_pic upload_pic">');
+              $("#tip").addClass("none");
+              wrap.find(".pingzhen_close").show();
+          });*/
+        var wrap = $(this).closest('td');
+        var $pingzhen = $(this).parent();
+        //上传后处理
+        $.ajax(settings).done(function (response) {
+            if ($(".upload_pic").length < 3) {
+                wrap.append('<div class="pingzhen no-fileInput">'+
+		 '<img src="' + fileHttp + response + '" data-url="' + response + '" alt="" class="pecen_yzlist_pic upload_pic">'+		 
+		 '<img src="../imgs/spfb_img_clear.png" alt="" class="spfb_picbox_clear" id="imgRemove"></div>');
+			};
+			$('#fileBtn').find('input').val('');
+            if ($(".upload_pic").length == 3){
+                $pingzhen.addClass("none");
+            }
+            $("#tip").addClass("none");
+        });
+    })
+
+getElementByTagName() -------------通过标签名称
+
+箭头函数的 this 永远指向其上下文的  this ，任何方法都改变不了其指向，如 call() ,  bind() ,  apply() 
+普通函数的this指向调用它的那个对象\
+
+1.-------------------------let和const都一样
+let不允许在相同作用域内，重复声明同一个变量。
+函数作用域是针对局部变量来说的，在函数中定义的变量在函数外不能获取.
+
+2.----------------const保证的不变是地址。
+const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。
+
+3------------------冻结对象
+如果真的想将对象冻结，应该使用Object.freeze方法。
+
+4---------------es6 的六种声明变量
+var function let const import class 
+
+5-------------顶层变量
+顶层对象，在浏览器环境指的是window对象，在 Node 指的是global对象。ES5 之中，顶层对象的属性与全局变量是等价的。
+
+6-----------------
+var命令和function命令声明的全局变量，依旧是顶层对象的属性；另一方面规定，let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性。
+
+7---------------------es6的新写法
+
+let [a, b, c] = [1, 2, 3];
+
+8----------解构赋值允许指定默认值。
+
+
+let [x, y = 'b'] = ['a']; // x='a', y='b'
+let [x, y = 'b'] = ['a', undefined]; // x='a', y='b'
+注意，ES6 内部使用严格相等运算符（===），判断一个位置是否有值。所以，只有当一个数组成员严格等于undefined，默认值才会生效。----只能是undefined
+
+
+const [a, b, c, d, e] = 'hello';
+a // "h"
+b // "e"
+c // "l"
+d // "l"
+e // "o"   什么狗屁解构。。。
+9=================提取json
+let jsonData = {
+  id: 42,
+  status: "OK",
+  data: [867, 5309]
+};
+
+let { id, status, data: number } = jsonData;
+
+console.log(id, status, number);
+10----------------------------------遍历 Map 结构
+const map = new Map();
+map.set('first', 'hello');
+map.set('second', 'world');
+
+for (let [key, value] of map) {
+  console.log(key + " is " + value);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
