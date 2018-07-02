@@ -110,7 +110,7 @@ let jsonData = {
   data: [867, 5309]
 };
 
-let { id, status, data: number } = jsonData;
+let { id, status, data: number } = jsonData; 
 
 console.log(id, status, number);
 10----------------------------------遍历 Map 结构
@@ -122,7 +122,32 @@ for (let [key, value] of map) {
   console.log(key + " is " + value);
 }
 
+11-------------------------模板字符串
+${字段}
 
+12--------------RegExp正则表达式
+var regex = new RegExp('xyz', 'i');
+// 等价于
+var regex = /xyz/i;
+
+13--------------------ES6 将全局方法parseInt()和parseFloat()，移植到Number对象上面，行为完全保持不变。
+// ES5的写法
+parseInt('12.34') // 12
+parseFloat('123.45#') // 123.45
+
+// ES6的写法
+Number.parseInt('12.34') // 12
+Number.parseFloat('123.45#') // 123.45
+
+14--------------指数运算符
+ES2016 新增了一个指数运算符（**）。
+let a = 1.5;
+a **= 2;
+// 等同于 a = a * a;
+
+let b = 4;
+b **= 3;
+// 等同于 b = b * b * b;
 
 
 

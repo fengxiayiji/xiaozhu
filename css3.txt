@@ -77,7 +77,11 @@ vertical-align；middle
 <meta name="viewport" content="width = device-width">
 
 
+11------------------------差距
+:nth-of-type(n)选择器和:nth-child(n)选择器非常类似，
 
+12---------------------自定义盒子的高度
+用overflow:hidden后子元素将撑出盒子的高度。
 
 
 
