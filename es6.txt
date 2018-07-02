@@ -149,15 +149,106 @@ let b = 4;
 b **= 3;
 // 等同于 b = b * b * b;
 
+15-----------------
+symbol  第七类型
+set  map 数据结构
+proxy
+reflect
+async
+16-----------------------------------class
+class Point {
+  constructor() {
+    // ...
+  }
+
+  toString() {
+    // ...
+  }
+
+  toValue() {
+    // ...
+  }
+}
+
+// 等同于
+
+Point.prototype = {
+  constructor() {},
+  toString() {},
+  toValue() {},
+};
+17------Object.assign方法可以很方便地一次向类添加多个方法(方法可用改变地址的赋值数组)
+class Point {
+  constructor(){
+    // ...
+  }
+}
+
+Object.assign(Point.prototype, {
+  toString(){},
+  toValue(){}
+});
+
+18---------------类必须使用new调用，否则会报错
+class Point {
+  // ...
+}
+
+// 报错
+var point = Point(2, 3);
+
+// 正确
+var point = new Point(2, 3）
+19------------------------------------原型链
+var Person = function(name) {
+    this.name = name;
+}
+
+// 初始化一个对象 p
+var p = new Person();
+
+// 推导过程 --> 
+// var p = {};
+// p.__proto__ =  Person.prototype;
+// Person.call(p);
+
+类不存在变量提升（hoist），这一点与 ES5 完全不同。
 
 
 
+20------------------------
+其实不是这样的除非用call和aply去改变this指向
 
 
+21-------------------------------私有方法和私有属性 
+1.
+class Widget {
 
+  // 公有方法
+  foo (baz) {
+    this._bar(baz);
+  }
 
+  // 私有方法
+  _bar(baz) {
+    return this.snaf = baz;
+  }
 
+  // ...
+}
+2.
+class Widget {
+  foo (baz) {
+    bar.call(this, baz);
+  }
 
+  // ...
+}
+
+function bar(baz) {
+  return this.snaf = baz;
+}
+3.
 
 
 

@@ -13,8 +13,8 @@ click dblclick   mouseenter  mouseleave  mouseup  mousedown
 
 4--------------------英语单词复习
 speed  速度   ,toggle（taogou）  切换, purple  紫色，皇族 ， opacity 模糊，不透明度  release  发布  siblings 兄妹  prepend  预谋，预先   trigger  触发 devDependencies  开发或者测试环境下的依赖包 transform的含义是：改变，使…变形；转换
-unbind 解放    adorable  可敬的，可爱的   frames 框架 infinite 无限的 temporary 临时的   strict  精确地  crowded  adj 水泄不通的 
-
+unbind 解放    adorable  可敬的，可爱的   frames 框架 infinite 无限的 temporary 临时的   strict  精确地  crowded  adj 水泄不通的  symbol  象征,标志  async  <ezenke>  adj 异步的
+ 
 5---------------hide()或者show()
 参数可以是slow,fast,毫秒数
 
@@ -131,6 +131,8 @@ sass是css预处理器
   
  java------------------
 HashMap是基于hashing的原理，我们使用put(key, value)存储对象到HashMap中，使用get(key)从HashMap中获取对象 
+
+
 
 
 
