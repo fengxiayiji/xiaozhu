@@ -217,7 +217,7 @@ var p = new Person();
 
 
 20------------------------
-其实不是这样的除非用call和aply去改变this指向
+其实不是这样的除非用call和apply去改变this指向
 
 
 21-------------------------------私有方法和私有属性 
@@ -249,6 +249,146 @@ function bar(baz) {
   return this.snaf = baz;
 }
 3.
+
+
+22---------------------------name的属性
+name属性总是返回紧跟在class关键字后面的类名。
+注：class Point {}
+Point.name // "Point"
+
+23---------------------------父类的静态方法，可以被子类继承。
+class Foo {
+  static classMethod() {
+    return 'hello';
+  }
+}
+
+class Bar extends Foo {
+}
+
+Bar.classMethod() // 'hello'
+
+24----------------上面的写法为Foo类定义了一个静态属性prop
+class Foo {
+}
+
+Foo.prop = 1;
+Foo.prop // 1
+
+或者
+class Foo {
+    prop = 23;
+	static  prop2 = 233
+
+}
+
+25------------------------------...yisi
+扩展运算符（ spread ）是三个点（...）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列。
+
+
+26---------------------------
+Object.getPrototypeOf方法可以用来从子类上获取父类。
+
+27-----------------在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错
+
+
+28---------------super这个关键字，既可以当作函数使用，也可以当作对象使用
+ES6 要求，子类的构造函数必须执行一次super函数。
+
+
+29----------------super作为对象时，在普通方法中，指向父类的原型对象；在静态方法中，指向父类。
+class A {
+  p() {
+    return 2;
+  }
+}
+
+class B extends A {
+  constructor() {
+    super();
+    console.log(super.p()); // 2
+  }
+}
+
+let b = new B();
+
+30---------------------------------继承的多种方法
+原型链继承
+构造继承
+实例继承
+
+31--------------------------------ES6 规定，在子类普通方法中通过super调用父类的方法时，方法内部的this指向当前的子类实例。
+class A {
+  constructor() {
+    this.x = 1;
+  }
+  print() {
+    console.log(this.x);
+  }
+}
+
+class B extends A {
+  constructor() {
+    super();
+    this.x = 2;
+  }
+  m() {
+    super.print();
+  }
+}
+
+let b = new B();
+b.m() // 2
+
+32-------------------------------------------
+class A {
+}
+
+class B extends A {
+}
+
+B.__proto__ === A // true
+B.prototype.__proto__ === A.prototype // true
+
+
+
+33---------------------继承的实现模式
+class A {
+}
+
+class B {
+}
+
+// B 的实例继承 A 的实例
+Object.setPrototypeOf(B.prototype, A.prototype);
+
+// B 继承 A 的静态属性
+Object.setPrototypeOf(B, A);
+
+const b = new B();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

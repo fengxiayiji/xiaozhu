@@ -1,0 +1,37 @@
+<html>
+<head>
+	 <meta charset="UTF-8">
+     <title>zph</title>	
+</head>
+
+<body>
+    <div>
+	<ul id="youName">
+	  <li>1</li>	
+      <li>23</li>	
+      <li>3</li>	
+	</ul>
+    </div>
+
+<script type="text/javascript">
+	
+window.onload = function(){
+  alert("你是傻逼")
+	var ulo = document.getElementById("youName");
+    alert(ulo);
+	ulo.onclick = function(ev){
+   
+	var ev = ev || window.event;
+    var target = ev.target|| ev.srcElement;
+    if(target.nodeName.toLowerCase() == 'li'){
+    alert(122);
+    alert(target.innerHTML);
+    }
+	}
+
+}
+
+</script>
+</body>
+
+</html>
