@@ -1,0 +1,52 @@
+
+
+1-----------------循环数组
+<code><ol>  
+  {{#each arr}}  
+  <li>Name:{{name}},Age:{{age}}<li>  
+  {{/each}}  
+</ol></code>  
+
+2------------------------循环对象
+<code><ul>  
+    {{#each obj}}  
+    <li>{{@key}}:{{this}}<li>  
+    {{/each}}  
+</ul></code>  
+
+3.-----------------------------内部嵌套循环
+<code><table>  
+{{#each list}}  
+  <tr>  
+  <td>{{name}}</td>  
+  <td>  
+    {{#each scores}}  
+      {{../sports}}:{{this}}<br/>  
+    {{/each}}  
+  </td>  
+  </tr>  
+  {{/each}}  
+</table></code>  
+
+4--------------------------if else block helper
+例如：
+{{#if list}}<ul id="list"> {{#each list}} <li>{{this}}</li> {{/each}}</ul> {{else}} <p>{{error}}</p>{{/if}}
+对应适用json数据
+var data = { info:['HTML5','CSS3',"WebGL"], "error":"数据取出错误"}
+
+5---------------unless block helper
+{{#unless}}这个语法是反向的if语法也就是当判断的值为false时他会渲染DOM 例如：
+{{#unless data}}<ul id="list"> {{#each list}} <li>{{this}}</li> {{/each}}</ul> {{else}} <p>{{error}}</p>{{/unless}}
+
+6-----------------------with block helper(赋值)
+<div class="entry"> <h1>{{title}}</h1> {{#with author}} <h2>By {{firstName}} {{lastName}}</h2> {{/with}}</div>
+对应适用json数据
+{ title: "My first post!", author: { firstName: "Charles", lastName: "Jolley" }}
+
+
+
+
+
+
+
+

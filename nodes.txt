@@ -1,0 +1,99 @@
+﻿1-----------------------------
+非阻塞，单线程，驱动事件
+
+2---------------------------
+pet.call()用于继承
+
+3---------------------------创建服务
+
+var http=require('http')
+
+http.createServer(function(req, res){
+res.writeHead(200,{'Content-Type':'text/application'})
+res.write('Hello NodeJs')
+res.end()
+}).listen(8080)
+
+4-------------------http测试
+  ab -n1000 代表一千条数据   -c10 代表十条并发
+  
+  5------------------事件模块
+  var EventEmitter=require('events').EventEmitter
+  var lift=new EventEmitter()
+  lift.on('aa',function(who){
+   console,log(who+"是傻逼")
+  })  注：on ==addEventListener
+   
+  lift.emit('aa','你')
+  
+  
+  6----------------------移除监听
+  单个移除：lift.removeListener('aa',water)  要把function写成具名函数才有效
+  所有移除：lift.removeAlllListeners()
+  
+  
+  7-------------------sublime Text (快速写html)
+  <!doctype>
+  html>head+body
+  
+  8-------------------------------------nodejs
+  path.basename() 方法返回一个 path 的最后一部分，
+  
+  9----------------------------------
+  path.format() 方法会从一个对象返回一个路径字符串。 与 path.parse() 相反。
+ 注:
+ path.format({
+  dir: 'C:\\path\\dir',
+  base: 'file.txt'
+});
+// 返回: 'C:\\path\\dir\\file.txt'
+
+
+10-----------------------------------------
+path.parse() 方法返回一个对象，对象的属性表示 path 的元素。 尾部文件分隔符会被忽略，请看 path.sep.
+
+返回的对象有以下属性：
+
+dir <string>
+root <string>
+base <string>
+name <string>
+ext <string>
+
+11--------------------------------process
+process 对象是 EventEmitter 的实例。
+'exit' 事件监听器的回调函数，只允许包含同步操作。
+process.on('exit', (code) => {
+  setTimeout(() => {
+    console.log('该函数不会被执行');
+  }, 0);
+});
+
+12-----------------------------------http和ftp的区别
+HTTP是Hyper Text Transfer Protocol，超文本传输协议；
+
+FTP是File Transfer Protocol,文件传输协议；
+
+简单说HTTP是面向网页的，而FTP是面向文件的。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

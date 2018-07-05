@@ -1,0 +1,29 @@
+------------------------------------------html5 -----------------------
+
+1----------------------视频
+例子：<video width="300" height="240" controls="controls">
+   <source src="movie.ogg" type="video/ogg">
+    <source src="movie.mp4" type="video/mp4">
+</video>                 注：constrols是显示控件，  source的作用的满足不用的浏览器都支持的格式写法。 video支持三种格式分别是 ogg,MPEG4,WebM
+
+2-------------------------视频、dom
+有play(),pause(),load()三种方法，常用属性height,width,和paused（来判断是否处于暂停阶段）
+
+3-------------------------------音频
+和视频一个写法看，支持三种 ogg vorbis, mp3, wav
+
+4-----------------------------------拖放
+1.设置可拖放：draggable="true".
+2.ondragstart="drag(event)"
+存值：event.dataTransfer.setData("text",event.target.id)
+取值：var data=event.dataTransfer.getData("text")
+可以拖动：就用event.preventDefault()
+渲染:event.target.appendChild(document.getElementById(data))
+
+5-------------画布
+
+创建context对象
+var C =document.getElementById("myCanvas");
+var cxt=c.getContext("2d")
+cxt.fillStyle="#ff0000"  填充颜色
+cxt.fillRect(0,0,150,45)  起点是（0,0）x轴150，y轴45

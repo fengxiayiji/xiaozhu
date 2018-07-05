@@ -368,9 +368,49 @@ Object.setPrototypeOf(B, A);
 const b = new B();
 
 
+34-----------------------------------import()可以在需要的时候，再加载某个模块。
+button.addEventListener('click', event => {
+  import('./dialogBox.js')
+  .then(dialogBox => {
+    dialogBox.open();
+  })
+  .catch(error => {
+    /* Error handling */
+  })
+});
+
+35-----------------------------vue的渲
+
+new Vue，执行初始化
+挂载$mount方法，通过自定义Render方法、template、el等生成Render函数
+通过Watcher监听数据的变化
+当数据发生变化时，Render函数执行生成VNode对象
+通过patch方法，对比新旧VNode对象，通过DOM Diff算法，添加、修改、删除真正的DOM元素
 
 
 
+36-----------------dom
+removeChild() ---删除子节点
+replaceChild()---替换子节点
+createAttribute()  --创建属性节点
+createElement()------创建元素节点
+
+37-----------------------ES6 模块与 CommonJS 模块的差异 § ⇧
+CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。
+CommonJS 模块是运行时加载，ES6 模块是编译时输出接口。
+
+38-----------------CommonJS 模块的输出都定义在module.exports这个属性上面。
+// a.js
+module.exports = {
+  foo: 'hello',
+  bar: 'world'
+};
+
+// 等同于
+export default {
+  foo: 'hello',
+  bar: 'world'
+};
 
 
 
